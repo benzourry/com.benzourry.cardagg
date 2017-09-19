@@ -1,0 +1,102 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+      /*transform-style: flat;*/
+  }
+  /* Add shadow when in mobile view*/
+  .page-title{
+      /*box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);*/
+  }
+
+  /* Modal Z-INDEX not working in using translateX */
+  .content-offcanvas {
+     -webkit-transition: all 300ms ease-out;
+        -moz-transition: all 300ms ease-out;
+         -ms-transition: all 300ms ease-out;
+             transition: all 300ms ease-out;
+       /*      left:0px;
+      -webkit-transform:translateX(0px);
+         -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+              transform:translateX(0px);
+              transform: translateZ(0px);*/
+  }
+
+    .active .content-offcanvas{
+      /*left: 250px;*/
+       -webkit-transform:translateX(250px);
+        -moz-transform: translateX(250px);
+        -ms-transform: translateX(250px);
+         transform:translateX(250px);
+  }
+  
+  .sidebar-offcanvas {
+    -webkit-transition: all 300ms ease-out;
+       -moz-transition: all 300ms ease-out;
+        -ms-transition: all 300ms ease-out;
+            transition: all 300ms ease-out;
+       -webkit-transform:translateX(-250px);
+        -moz-transform: translateX(-250px);
+        -ms-transform: translateX(-250px);
+         transform:translateX(-250px);
+         z-index:12;
+  }
+
+    .active .sidebar-offcanvas{
+       -webkit-transform:translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+         transform:translateX(0px);
+            width: 250px;
+            z-index:12;
+  }
+  
+    .offcanvas-overlay{
+        /*transform: translate3d(0px, 0px, 0px) !important;*/
+        background: #000;
+        opacity: 0;
+        -webkit-transition: opacity 300ms linear;
+           -moz-transition: opacity 300ms linear;
+                transition: opacity 300ms linear;
+    }
+    .active .offcanvas-overlay{
+        position:fixed;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:100%;
+        z-index:11;
+        opacity: 0.2;
+    }
+}
+
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    /*width:inherit;*/
+    /*height:inherit;*/
+    /*!* To center horizontally *!*/
+    /*margin: 0 auto;*/
+    pointer-events: all;
+}

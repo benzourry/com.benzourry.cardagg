@@ -1,0 +1,130 @@
+<page-title>
+    Device List
+</page-title>
+<style>
+    .viewport{
+        padding-top:60px;
+    }
+</style>
+
+<div class="viewport">
+    <div class="limit-width padding-15">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                List of Devices
+                <button class="btn btn-default panel-action" ng-click="$ctrl.editDevice({})"><i class="fa fa-plus"></i> Add Device</button>
+            </div>
+            <div class="panel-body" ng-if="$ctrl.list.length==0">
+                <h4>No data</h4>
+                <p>There is no data to display</p>
+            </div>
+            <table class="table table-striped"  ng-if="$ctrl.list.length>0">
+                <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Decription</th>
+                    <th>Location</th>
+                    <th>Client</th>
+                    <th class="col-xs-1">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="device in $ctrl.list">
+                    <td>{{device.code}}</td>
+                    <td>{{device.description}}</td>
+                    <td>{{device.location}}</td>
+                    <td>{{device.client.name}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-sm" ng-click="$ctrl.editDevice(device, true)"><i class="fa fa-pencil"></i> </button>
+                            <button class="btn btn-default btn-sm" ng-click="$ctrl.deleteDevice(device)"><i class="fa fa-remove"></i> </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="deviceEdit.html">
+    <div >
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$mdl.cancel()" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Edit Device</h4>
+        </div>
+        <div class="modal-body">
+            <!--<p>{{$mdl.data|json}}</p>-->
+            <div class="form">
+                <div class="form-group">
+                    <label>Code</label>
+                    <input class="form-control" type="text" ng-model="$mdl.data.code">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input class="form-control" type="text" ng-model="$mdl.data.description">
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input class="form-control" type="text" ng-model="$mdl.data.location">
+                </div>
+                <div class="form-group">
+                    <label>Client</label>
+                    <ui-select ng-model="$mdl.data.client"
+                               name="client"
+                               theme="bootstrap"
+
+                               required="true">
+                        <ui-select-match class="ui-select-match"
+                                         placeholder="Please select..." allow-clear="true">
+                            {{$select.selected.name}}
+                        </ui-select-match>
+                        <ui-select-choices class="ui-select-choices"
+                                           repeat="c in $mdl.items.clientList | filter: $select.search">
+                            {{c.name}}
+                        </ui-select-choices>
+                    </ui-select>
+                    <!--<select class="form-control" ng-model="$mdl.data.client"-->
+                            <!--ng-options="client.name for client in $mdl.items.clientList track by $index">-->
+                        <!--&lt;!&ndash;<option ng-repeat="client in $mdl.items.clientList" ng-value="client">{{client.name}}</option>&ndash;&gt;-->
+                    <!--</select>-->
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="$mdl.cancel()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="$mdl.update($mdl.data)"><i
+                    class="fa fa-floppy"></i> Save changes
+            </button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="deviceDelete.html">
+    <div >
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$mdl.cancel()" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Remove Device</h4>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure to remove the following device</p>
+            <div class="form">
+                <div class="form-group">
+                    <label>Code</label>
+                    <p class="form-control-static">{{$mdl.data.code}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <p class="form-control-static">{{$mdl.data.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="$mdl.cancel()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="$mdl.update($mdl.data)"><i
+                    class="fa fa-floppy"></i> Remove Device
+            </button>
+        </div>
+    </div>
+</script>
+

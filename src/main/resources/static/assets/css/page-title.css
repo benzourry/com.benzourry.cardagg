@@ -1,0 +1,122 @@
+
+
+page-title .title-text{
+/*    float:left;*/
+    margin-left:50px;
+}
+page-title {
+    padding: 10px 10px;
+    font-size: 30px;
+    letter-spacing: -1px;
+    display: block;
+    color: #fff;
+    background: #009688;
+    min-height: 60px;
+    font-weight: 300 !important;
+    transition: all .5s ease;
+
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    overflow: hidden; /* To clear contents */
+    zoom: 1; /* To fix IE6 bugs with floats */
+
+}
+/*page-title:after{*/
+    /*content:"";*/
+    /*height:100%;*/
+    /*position:relative;*/
+    /*top:200px;*/
+    /*border:solid 1px #000;*/
+    /*!*clear: both;*!*/
+/*}*/
+
+/*page-title .container {*/
+    /*float: left;*/
+    /*margin-left: -100%;*/
+    /*position: relative;*/
+    /*left: 100%;*/
+    /*width: 100%;*/
+/*}*/
+
+/*page-title .stuff {*/
+    /*float: left;*/
+/*}*/
+
+
+
+page-title .sub{
+    font-size:14px;
+}
+
+page-title .nav-icon {
+    margin: 7px 7px;
+    width: 25px;
+    float: left;
+}
+
+page-title .nav-icon:after,
+page-title .nav-icon:before,
+page-title .nav-icon div {
+    background-color: #fff;
+    -o-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    height: 4px;
+    margin: 4px 0;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.active page-title .nav-icon:before {
+    transform: translateY(8px) rotate(135deg);
+    -moz-transform: translateY(8px) rotate(135deg);
+    -webkit-transform: translateY(8px) rotate(135deg);
+}
+
+.active page-title .nav-icon:after {
+    transform: translateY(-8px) rotate(-135deg);
+    -moz-transform: translateY(-8px) rotate(-135deg);
+    -webkit-transform: translateY(-8px) rotate(-135deg);
+}
+
+.active page-title .nav-icon div {
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+/*
+page-title .navbar-icon{
+    height:32px;
+    width: 32px;
+    float: left;
+    margin: 5px 5px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    background: url('../images/menu55.png') 0px center no-repeat;
+}
+
+page-title .navbar-icon::after{
+    content: '\f0c9';
+}
+
+.active page-title .navbar-icon{
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+    background: url('../images/go10.png') 0px center no-repeat;
+}
+*/
+@media (min-width: 768px) {
+    page-title .nav-icon{
+        display:none;
+    }
+    page-title .title-text{
+        margin-left:10px;
+    }
+}
+

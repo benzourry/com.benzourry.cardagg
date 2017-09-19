@@ -1,0 +1,113 @@
+<page-title  style="background:#607D8B">
+    User Link
+</page-title>
+<style>
+    .viewport{
+        padding-top:60px;
+    }
+</style>
+
+<div class="viewport">
+    <div class="limit-width padding-15">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                User Link
+                <button class="btn btn-default panel-action" ng-click="$ctrl.editUserlink({})"><i class="fa fa-plus"></i> Add Userlink</button>
+            </div>
+            <div class="panel-body" ng-if="$ctrl.list.length==0">
+                <h4>No data</h4>
+                <p>There is no data to display</p>
+            </div>
+            <table class="table table-striped" ng-if="$ctrl.list.length>0">
+                <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Card UID</th>
+                    <th>Remark</th>
+                    <th class="col-xs-1">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="userlink in $ctrl.list">
+                    <td>{{userlink.userid}}</td>
+                    <td>{{userlink.cuid}}</td>
+                    <td>{{userlink.remark}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-sm" ng-click="$ctrl.editUserlink(userlink, true)"><i class="fa fa-pencil"></i> </button>
+                            <button class="btn btn-default btn-sm" ng-click="$ctrl.deleteUserlink(userlink)"><i class="fa fa-remove"></i> </button>
+                            <button class="btn btn-default btn-sm" ng-click="$ctrl.testLog(userlink)">Test </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script type="text/ng-template" id="userlinkEdit.html">
+    <div >
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$mdl.cancel()" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Edit Userlink</h4>
+        </div>
+        <div class="modal-body">
+            <!--<p>{{$mdl.data|json}}</p>-->
+            <div class="form">
+                <div class="form-group">
+                    <label>User ID</label>
+                    <input class="form-control" type="text" ng-model="$mdl.data.userid">
+                </div>
+                <div class="form-group">
+                    <label>Card UID</label>
+                    <input class="form-control" type="text" ng-model="$mdl.data.cuid">
+                </div>
+                <div class="form-group">
+                    <label>Remark</label>
+                    <input class="form-control" type="text" ng-model="$mdl.data.remark">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="$mdl.cancel()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="$mdl.update($mdl.data)"><i
+                    class="fa fa-floppy"></i> Save changes
+            </button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="userlinkDelete.html">
+    <div >
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$mdl.cancel()" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Remove Userlink</h4>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure to remove the following userlink</p>
+            <div class="form">
+                <div class="form-group">
+                    <label>UserID</label>
+                    <p class="form-control-static">{{$mdl.data.userid}}</p>
+                </div>
+                <div class="form-group">
+                    <label>CUID</label>
+                    <p class="form-control-static">{{$mdl.data.cuid}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="$mdl.cancel()">Cancel</button>
+            <button type="button" class="btn btn-primary" ng-click="$mdl.update($mdl.data)"><i
+                    class="fa fa-floppy"></i> Remove Userlink
+            </button>
+        </div>
+    </div>
+</script>
+
+

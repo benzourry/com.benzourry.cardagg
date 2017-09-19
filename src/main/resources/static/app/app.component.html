@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row row-offcanvas"  ng-class="$ctrl.active ? 'active' : ''">
+        <div id="ex3" class="sidebar sidebar-offcanvas"  ng-class="$ctrl.active ? 'active' : ''">
+
+            <div class="sidebar-brand">
+                CardAGG
+            </div>
+            <div class="profile">
+                {{$ctrl.user.fullname}}
+            </div>
+            <div class="sidenav">
+                <ul>
+                <li>
+                    <a href="#!/device">
+                        <i class="fa fa-simplybuilt"></i> Device</a>
+                </li>
+                <li>
+                    <a href="#!/client">
+                        <i class="fa fa-simplybuilt"></i> Client</a>
+                </li>
+                <li>
+                    <a href="#!/userlink">
+                        <i class="fa fa-simplybuilt"></i> User Link</a>
+                </li>
+                    <li>
+                    <a ng-click="$ctrl.logout()" href>
+                        <i class="fa fa-lock"></i> Logout</a>
+                </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="offcanvas-overlay"  ng-click="$ctrl.active = !$ctrl.active"></div>
+        <div class="main content-offcanvas" ng-view ></div>
+    </div>
+</div>

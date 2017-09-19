@@ -1,0 +1,224 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/*@import url(../fonts/font.css);*/
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+
+html{
+    height:100%;
+    padding-top: 0px;
+}
+body {
+    background: #f1f1f1;
+    color: #000;
+    font-family: 'Open Sans','Roboto', sans-serif;
+    /*font-size: 13px;*/
+    direction: ltr;
+    height:100%;
+    overflow:auto;
+    overflow:initial;
+}
+
+.sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+    color:#fff;
+    padding-left:25px;
+}
+
+/*
+ * Sidebar
+*/
+.sidebar {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    width:250px;
+    /*background-color: #111;*/
+    background-image: linear-gradient(to bottom, #090c1f,#133244);
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    display: block;
+    background: #000;
+}
+
+
+.sidebar .sidenav ul > li > a {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 13px 25px;
+    color: #999999;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+}
+.sidebar .sidenav ul > li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+/*.sidebar ul a:active {
+    background:#666 !important;
+}*/
+/*.sidebar .sidenav  ul a{*/
+    /*font-size: 12px;*/
+/*}*/
+
+.sidebar .sidenav  ul > li > a > .arrow:before {
+    float: right;
+    margin-top: 0px;
+    margin-right: 5px;
+    display: inline;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f104";
+    font-weight: 300;
+}
+
+.sidebar .sidenav  ul > li > ul.sub-menu {
+    display: none;
+    list-style: none;
+    clear: both;
+    /* margin: 0px 10px 0px 10px;*/
+}
+
+/*.sidebar.navbar-collapse {
+    padding: 0;
+}*/
+
+.sidebar .sidenav  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar .sidenav  ul > li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+}
+
+.sidebar .sidenav  ul > li.start > a {
+    border-top-color: transparent !important;
+    margin-top: 10px;
+}
+
+.sidebar .sidenav  ul > li:last-child > a,
+.sidebar .sidenav  ul > li.last > a {
+    border-bottom-color: transparent !important;
+}
+
+.sidebar .sidenav  ul > li > a i {
+    margin-right: 10px;
+    width:20px;
+    text-shadow:none;
+}
+
+.sidebar .sidenav  ul > li.active > a {
+    border: none;
+    text-shadow:none;
+}
+
+/*.sidebar ul > li.active  {
+    border-right: 4px solid #d12610;
+}*/
+
+.sidebar .sidenav  ul > li > a > .arrow:before {
+    float: right;
+    margin-top: 0px;
+    margin-right: 5px;
+    display: inline;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f104";
+    font-weight: 300;
+    text-shadow:none;
+}
+
+.sidebar .sidenav  ul > li.active > a > .arrow:before {
+    margin-right: 1px;
+}
+
+.sidebar .sidenav  ul > li > a > .arrow.open:before {
+    float: right;
+    margin-top: 0px;
+    margin-right: 3px;
+    display: inline;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f107";
+    font-weight: 300;
+    text-shadow:none;
+}
+.sidebar .sidenav  ul > li.open > a {
+    color: #aaa;
+}
+
+/* bagin: sidebar menu badges */
+.sidebar .sidenav  ul li > a > .badge {
+    float: right;
+    margin-top: 1px;
+    margin-right: 13px;
+    font-size: 80%;
+}
+
+/* end: sidebar menu badges */
+
+.sidebar .sidenav  ul .sub-menu {
+    padding: 0;
+}
+
+
+.sidebar .sidenav  ul > li.active > ul.sub-menu {
+    display: block;
+}
+
+.sidebar .sidenav  ul > li > ul.sub-menu > li {
+    background: none;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 1px !important;
+}
+
+.sidebar .sidenav  ul > li > ul.sub-menu > li > a {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 25px;
+    padding-left: 50px !important;
+    /* padding-left: 25px !important;*/
+    text-decoration: none;
+    font-weight: 300;
+    background: none;
+}
+
+.sidebar .sidenav .sub-menu .sub-menu{
+    padding-left: 38px;
+}
+
+/*
+ * Main content
+*/
+
+.main {
+    /*padding: 10px;*/
+    height: 100%;
+}
+
+.main .page-header {
+    margin-top: 0;
+}
+
+.single-content {
+    /*background-color: #fff;*/
+    /*border: 1px solid #ddd;*/
+    border-top:none;
+    padding: 15px;
+}

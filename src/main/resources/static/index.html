@@ -1,0 +1,18 @@
+<html lang="en" ng-app="app">
+
+<head>
+    <title>redirecting</title>
+</head>
+
+<body>
+
+<script src="app/_shared/oauth-config.js"></script>
+
+<script>
+//    redirect user to the oauth2 authorization page (authorize if logged in, else, redirect to log in page)
+    window.location.href = OAUTH.AUTH_URI+"?client_id=" + OAUTH.CLIENT_ID + "&response_type=token&redirect_uri="+OAUTH.CALLBACK;
+
+</script>
+</body>
+
+</html>
